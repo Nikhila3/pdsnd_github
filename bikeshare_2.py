@@ -201,8 +201,8 @@ def main():
         num_rows = df.shape[0]
         i = 0;
         while i < num_rows:
-            raw_data_request = input("\nWould you like to see 5 lines of raw data? Enter yes or no.\n")
-            if raw_data_request.lower() != 'yes':
+            raw_data_requested = input("\nWould you like to see 5 lines of raw data? Enter yes or no.\n")
+            if raw_data_requested.lower() != 'yes':
                 break
             print(raw_df[i:i+5])
             i += 5
