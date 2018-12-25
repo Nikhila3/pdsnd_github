@@ -140,12 +140,12 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    total_time = df['Trip Duration'].sum()
-    print("Total travel time: {} seconds".format(total_time))
+    total_travel_time = df['Trip Duration'].sum()
+    print("Total travel time: {} seconds".format(total_travel_time))
 
     # display mean travel time
-    mean_time = df['Trip Duration'].mean()
-    print("Mean travel time: {} seconds".format(mean_time))
+    mean_travel_time = df['Trip Duration'].mean()
+    print("Mean travel time: {} seconds".format(mean_travel_time))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -177,7 +177,7 @@ def user_stats(df):
 
         most_recent_birth_year = df['Birth Year'].max()
         print("Most recent birth year: {}".format(most_recent_birth_year))
-        
+
         most_common_birth_year = df['Birth Year'].mode()[0]
         print("Most common birth year: {}".format(most_common_birth_year))
     except KeyError:
