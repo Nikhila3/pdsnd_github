@@ -140,12 +140,12 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    total_time = df['Trip Duration'].sum()
-    print("Total travel time: {} seconds".format(total_time))
+    total_travel_time = df['Trip Duration'].sum()
+    print("Total travel time: {} seconds".format(total_travel_time))
 
     # display mean travel time
-    mean_time = df['Trip Duration'].mean()
-    print("Mean travel time: {} seconds".format(mean_time))
+    mean_travel_time = df['Trip Duration'].mean()
+    print("Mean travel time: {} seconds".format(mean_travel_time))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -174,8 +174,10 @@ def user_stats(df):
     try:
         earliest_birth_year = df["Birth Year"].min()
         print("\nEarliest birth year: {}".format(earliest_birth_year))
+
         most_recent_birth_year = df['Birth Year'].max()
         print("Most recent birth year: {}".format(most_recent_birth_year))
+
         most_common_birth_year = df['Birth Year'].mode()[0]
         print("Most common birth year: {}".format(most_common_birth_year))
     except KeyError:
@@ -199,8 +201,8 @@ def main():
         num_rows = df.shape[0]
         i = 0;
         while i < num_rows:
-            raw_data_request = input("\nWould you like to see 5 lines of raw data? Enter yes or no.\n")
-            if raw_data_request.lower() != 'yes':
+            raw_data_requested = input("\nWould you like to see 5 lines of raw data? Enter yes or no.\n")
+            if raw_data_requested.lower() != 'yes':
                 break
             print(raw_df[i:i+5])
             i += 5
