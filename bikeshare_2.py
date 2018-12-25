@@ -174,8 +174,10 @@ def user_stats(df):
     try:
         earliest_birth_year = df["Birth Year"].min()
         print("\nEarliest birth year: {}".format(earliest_birth_year))
+
         most_recent_birth_year = df['Birth Year'].max()
         print("Most recent birth year: {}".format(most_recent_birth_year))
+        
         most_common_birth_year = df['Birth Year'].mode()[0]
         print("Most common birth year: {}".format(most_common_birth_year))
     except KeyError:
